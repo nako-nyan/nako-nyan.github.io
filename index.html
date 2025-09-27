@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nako’s Website!!!</title>
+  
+  <link rel="stylesheet" href="/styles.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/favocion.png">
 
+</head>
+
+<body>
+  <div id="intro-screen" class="text-center">
+    <button id="enter-btn" class="cute-btn">Enter Nako’s <i>AMAZING</i> Site</button>
+  </div>
+
+  <div class="nako-card" id="main-card" style="display:none;">
+    <h1 class="text-center">Hiyaaa~ I’m Nako</h1>
+    <p class="text-center">
+      I spend way too much time watching anime so if u dm me and I don’t instantly respond I’m probably doing thattttt or programming a bot or playing Cyberpunk. <br><br>
+      dont rlly know what ill do with this website atm, ill probably put it to use later on but yk- for the time being js.... click the button
+    </p>
+
+    <div class="text-center">
+        <button id="depression-btn" class="cute-btn">cbpk made by cyber cry ╯︵╰</button>
+    </div>
+
+    <audio id="cute-music" loop>
+      <source src="/music/friday_theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="depression-music">
+      <source src="/music/irwtsayh.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+
+  <script>
+  const enterBtn = document.getElementById("enter-btn");
+  const introScreen = document.getElementById("intro-screen");
+  const mainCard = document.getElementById("main-card");
+  const depressionBtn = document.getElementById("depression-btn");
+  const cuteMusic = document.getElementById("cute-music");
+  const depressionMusic = document.getElementById("depression-music");
+  const body = document.body;
+
+  enterBtn.addEventListener("click", () => {
+    introScreen.style.display = "none";  
+    mainCard.style.display = "block";  
+    cuteMusic.play();             
+  });
+
+  depressionBtn.addEventListener("click", () => {
+    // stop cute music
+    cuteMusic.pause();
+    cuteMusic.currentTime = 0;
+
+    // play depression music
+    depressionMusic.play();
+
+    // switch theme
+    body.classList.add("cyberpunk-mode");
+
+    // change text
+    document.querySelector("h1").textContent = "I really want to stay at your house~"; 
+    document.querySelector("p").innerHTML = "Nako.exe has short circed!!! <br>Welcome to Night City.";
+    
+    // update + disable the button
+    depressionBtn.textContent = "You didn't take me to the moon, but you were there with me.";
+    depressionBtn.disabled = true;
+    depressionBtn.style.opacity = "0.6";     // faded look
+    depressionBtn.style.cursor = "not-allowed"; // "dead" cursor
+
+    // switch font
+    body.style.fontFamily = "'Orbitron', sans-serif";
+    
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+        favicon.href = "/images/cyberfavocion.png";
+    }
+  });
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
