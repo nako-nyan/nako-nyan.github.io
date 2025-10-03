@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAKO ADVENTURE!!!</title>
+  
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/favocion.png">
+</head>
+
+<body>
+
+  <audio src="/music/friday_theme.mp3" autoplay loop></audio>
+
+  <div class="nako-card" id="game">
+    <h1 class="text-center" id="scene-title">ENCOUNTER!</h1>
+    <p class="text-center" id="scene-text">
+      An old lady walks up to you… what do you do?
+    </p>
+    <div class="text-center" id="choices"></div>
+  </div>
+
+  <script>
+  // Story setup: each scene has text + choices leading to other scenes
+  const story = {
+    start: {
+      title: "ENCOUNTER!",
+      text: "An old lady walks up to you… what do you do?",
+      choices: {
+        "PUNCH HER!": "punch1",
+        "GREET HER": "greet1",
+        "INSULT HER": "insult1",
+        "IGNORE HER": "ignore1"
+      }
+    },
+
+    // --- Punch route ---
+    punch1: {
+      title: "You chose violence!",
+      text: "The old lady dodges like a pro and pulls out a cane!",
+      choices: { "Fight!": "punch2", "Run!": "punch3" }
+    },
+    punch2: {
+      title: "Clash!",
+      text: "She swings the cane at you with shocking speed, she must be an olympic baseball player or something.",
+      choices: { "Block": "punch4", "Take the hit": "punch5" }
+    },
+    punch3: {
+      title: "Coward!",
+      text: "You sprint away like a bih..... but she’s faster than you thought!! WHAT IS SHE AN OLYMPIC SPRINTER??",
+      choices: { "Hide": "punch4", "Trip her": "punch5" }
+    },
+    punch4: {
+      title: "Epic Struggle",
+      text: "You narrowly deflect the attack and are getting ready to counter, what do u do?!?",
+      choices: { "Finish her": "ending_bad", "Spare her": "ending_good" }
+    },
+    punch5: {
+      title: "Ouch!",
+      text: "The cane cracks against your skull, this granny can hit harddd, you almostt die!!!!.",
+      choices: { "Collapse": "ending_bad", "Get up": "punch4" }
+    },
+
+    // --- Greet route ---
+    greet1: {
+      title: "You chose kindness!",
+      text: "She smiles warmly and hands you a COOKIEEE.",
+      choices: { "Eat it": "greet2", "Throw it away": "greet3" }
+    },
+    greet2: {
+      title: "Tasty?",
+      text: "The cookie tastes sweet, but your vision blurs and u start feeling sleepy weepy deepy.",
+      choices: { "Stay calm": "greet4", "Panic": "greet5" }
+    },
+    greet3: {
+      title: "Rude!",
+      text: "She frowns and mutters some weird curse shit under her breath and vanishes into smoke.",
+      choices: { "Chase her": "greet4", "Forget it": "ending_bad" }
+    },
+    greet4: {
+      title: "Strange Magic",
+      text: "The world starts spinning around you and u feel sick and shiiiii, u can see demons n allat!!!! you’ve been cursed!?!?!!!!!",
+      choices: { "Resist": "ending_good", "Give in": "ending_bad" }
+    },
+    greet5: {
+      title: "Paranoia",
+      text: "You panic too much and faint on the spot :(",
+      choices: { "Wake up": "greet4" }
+    },
+
+    // --- Insult route ---
+    insult1: {
+      title: "Insult!",
+      text: "You roast the old lady... 'hey raggedy old BITCH, dont make me clock u' she gasps like never before!!!!!?!.",
+      choices: { "Keep going": "insult2", "Apologize": "insult3" }
+    },
+    insult2: {
+      title: "Savage!!!!?!?!",
+      text: "You double down and call her wrinkles 'wifi signals'. ur so evil for roasting a sweett old granny like this.....",
+      choices: { "Keep flaming": "insult4", "Laugh": "insult5" }
+    },
+    insult3: {
+      title: "Backpedal",
+      text: "You stutter out an apology like a lil bitch but she just squints at you like a disappointed granny",
+      choices: { "Bow": "insult4", "Run": "ending_bad" }
+    },
+    insult4: {
+      title: "Escalation",
+      text: "She pulls out HOLY WATER???!!! Grandma about to EXORCISE your disrespectful ahh from this realm",
+      choices: { "Beg for mercy": "ending_good", "Stand your ground": "ending_bad" }
+    },
+    insult5: {
+      title: "LOL",
+      text: "You laugh at your own joke, she ain't laughing tho... she's pulling outt a kitchen knife.",
+      choices: { "Escape": "ending_bad", "Try apologizing": "insult3" }
+    },
+
+    // --- Ignore route ---
+    ignore1: {
+      title: "Ignore",
+      text: "You act like she doesn't exist, but her weird ahh starts FOLLOWING YOU!!",
+      choices: { "Confront": "ignore2", "Walk faster": "ignore3" }
+    },
+    ignore2: {
+      title: "Confrontation",
+      text: "You finally spin around and ask wtf she wants, almost pimp slapping that hoe b4 u get a good look at her face, she just smiles at u with a creepy ahh smile.",
+      choices: { "Yell at her": "ignore4", "Stay calm": "ignore5" }
+    },
+    ignore3: {
+      title: "RAHHHH~",
+      text: "You run away like how u usually run from ur bills and responsibilties, but SHE KEEPS UP WTICHU??!",
+      choices: { "Sprint": "ignore4", "Hide": "ignore5" }
+    },
+    ignore4: {
+      title: "Escalation",
+      text: "You snap but she suddenly vanishes into thin air,,,,,, wtf was she even real?? u should prolly calm down on the pills?!",
+      choices: { "Cry": "ending_bad", "Pretend nothing happened": "ending_good" }
+    },
+    ignore5: {
+      title: "Awkward Silence",
+      text: "............................................ dot dot dot .......................................",
+      choices: { "Go home": "ending_good", "Look back": "ending_bad" }
+    },
+
+    // --- Endings ---
+    ending_good: {
+      title: "ENDING: SURVIVOR !!",
+      text: "Somehow you made it out alive. Granny was js playin today so congrats, u win (for now).",
+      choices: { "Restart": "start" }
+    },
+    ending_bad: {
+      title: "ENDING: GAME OVER !!!!",
+      text: "granny absolutely clapped ur cheeks (not in that way). Better luck next time bum.",
+      choices: { "Restart": "start" }
+    }
+  };
+
+  const sceneTitle = document.getElementById("scene-title");
+  const sceneText = document.getElementById("scene-text");
+  const choicesDiv = document.getElementById("choices");
+
+  function showScene(sceneKey) {
+    const scene = story[sceneKey];
+    sceneTitle.textContent = scene.title;
+    sceneText.textContent = scene.text;
+
+    // Clear old buttons
+    choicesDiv.innerHTML = "";
+
+    // Add new ones
+    for (const [label, nextScene] of Object.entries(scene.choices)) {
+      const btn = document.createElement("button");
+      btn.textContent = label;
+      btn.className = "cute-btn m-1";
+      btn.addEventListener("click", () => showScene(nextScene));
+      choicesDiv.appendChild(btn);
+    }
+  }
+
+  // Start game
+  showScene("start");
+  </script>
+</body>
+</html>
