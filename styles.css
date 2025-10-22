@@ -81,23 +81,52 @@ body {
 /* cute grid for your images */
 .image-grid {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 }
 
-.img-spot {
-  width: 90px;
-  height: 90px;
-  background: rgba(255, 182, 217, 0.1);
-  border: 1px dashed rgba(255, 182, 217, 0.4);
+.img-link {
+  position: relative;
+  display: inline-block;
   border-radius: 15px;
+  overflow: hidden;
   box-shadow: 0 0 10px rgba(255, 182, 217, 0.15);
   transition: all 0.3s ease;
 }
 
-.img-spot:hover {
-  background: rgba(255, 182, 217, 0.2);
+.img-link img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: brightness(0.8);
+  transition: all 0.4s ease;
+}
+
+/* soft hover glow + label text */
+.img-link::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #ffc1dc;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.img-link:hover::after {
+  bottom: -20px;
+  opacity: 1;
+}
+
+.img-link:hover img {
   transform: scale(1.05);
+  filter: brightness(1);
+  box-shadow: 0 0 12px #ffb6d9;
 }
 
 /* animations */
