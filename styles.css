@@ -1,110 +1,116 @@
-    /* 🌸 Default cute pink anime style */
-    body {
-    display: flex;                 /* centers content */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;             /* makes it fill screen height */
-    margin: 0;                     /* removes default spacing */
-    
-    background: linear-gradient(135deg, #ffe6f0, #ffd6eb, #ffcce7);
-    background-repeat: no-repeat;  /* stops tiling */
-    background-size: cover;        /* fills the whole screen */
-    
-    font-family: 'Nunito', sans-serif;
-    color: #ff4d94;
-    text-align: center;
-    transition: all 0.8s ease;
-    }
+/* jirai-kei dark cute core aesthetic */
 
-    /* 🌸 Cute card for your about section */
-    .nako-card {
-    background: #fff0f6;
-    border-radius: 25px;
-    padding: 30px;
-    max-width: 400px;
-    width: 90%;                    /* keeps it responsive */
-    box-shadow: 0px 8px 20px rgba(255, 182, 193, 0.4);
-    border: 2px solid #ff99c8;
-    animation: floaty 4s ease-in-out infinite;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background: #000;
+  color: #ffb6d9;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 1s ease, color 1s ease;
+}
 
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
+/* intro button screen */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.2s ease forwards;
+}
 
-    /* 🌸 Title styling */
-    h1 {
-      font-family: 'Cherry Bomb One', cursive;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
+.main-btn {
+  background: none;
+  border: 1px solid #ff9acb;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffb6d9;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: lowercase;
+}
 
-    /* 🌸 Text styling */
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
+.main-btn:hover {
+  background: #ffb6d9;
+  color: #000;
+  box-shadow: 0 0 15px #ffb6d9;
+}
 
-    /* 🌸 Cute buttons or links */
-    .cute-btn {
-      background: #ff99c8;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .cute-btn:hover {
-      background: #ff66a3;
-      transform: scale(1.05);
-    }
+/* main about card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  background: rgba(255, 182, 217, 0.05);
+  border: 1px solid rgba(255, 182, 217, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(255, 182, 217, 0.2);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease forwards;
+}
 
-    /* 🌸 Music player hidden, styled with emoji */
-    audio {
-      margin-top: 20px;
-      outline: none;
-    }
+.card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  color: #ffb6d9;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
 
-    /* ========================= */
-    /* 🌌 Cyberpunk "Depression" */
-    /* ========================= */
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffc1dc;
+  margin-bottom: 25px;
+}
 
-    body.cyberpunk-mode h1 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00ffe7; /* optional neon text */
-    text-shadow: 0 0 10px #ff0080, 0 0 20px #00ffe7; /* neon glow effect */
-    }
+/* cute grid for your images */
+.image-grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 
-    body.cyberpunk-mode {
-    font-family: 'Orbitron', sans-serif;
-    }
+.img-spot {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 182, 217, 0.1);
+  border: 1px dashed rgba(255, 182, 217, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 182, 217, 0.15);
+  transition: all 0.3s ease;
+}
 
-    .cyberpunk-mode {
-    background: url("/images/cbpk.jpg") center center fixed;
-    background-size: cover;       /* scales with viewport */
-    background-repeat: no-repeat;
-    color: #00f7ff;
-    }
+.img-spot:hover {
+  background: rgba(255, 182, 217, 0.2);
+  transform: scale(1.05);
+}
 
-    .cyberpunk-mode .nako-card {
-    background: rgba(20, 20, 20, 0.8);
-    border: 2px solid #ff004d;
-    box-shadow: 0px 0px 30px #ff004d, 0px 0px 50px #00f7ff inset;
-    }
+/* animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-    .cyberpunk-mode h1 {
-    color: #ff004d;
-    text-shadow: 0 0 10px #ff004d, 0 0 20px #00f7ff;
-    }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .cyberpunk-mode .cute-btn {
-    background: #ff004d;
-    color: #00f7ff;
-    }
-    .cyberpunk-mode .cute-btn:hover {
-    background: #00f7ff;
-    color: #000;
-    }
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
