@@ -89,7 +89,7 @@ body {
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 0 10px rgba(255, 182, 217, 0.15);
   transition: all 0.3s ease;
 }
@@ -143,4 +143,5 @@ body {
 .fade-in {
   animation: fadeIn 1.5s ease forwards;
 }
+
 
