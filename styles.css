@@ -145,7 +145,7 @@ body {
 }
 
 .gfx-button {
-  display: inline-block;
+  display: block;
   margin-top: 30px;
   padding: 15px 25px;
   background: #ffb6d9;
@@ -173,4 +173,5 @@ body {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.02); }
 }
+
 
