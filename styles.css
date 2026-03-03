@@ -144,32 +144,6 @@ body {
   animation: fadeIn 1.5s ease forwards;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
-this wall seperates my 2 css codes heheheahehaheahehae
-▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
-
-
-
-
-
-
-
-
-
-
-
-
 .gfx-button {
   display: inline-block;
   margin-top: 30px;
@@ -199,3 +173,4 @@ this wall seperates my 2 css codes heheheahehaheahehae
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.02); }
 }
+
