@@ -145,3 +145,57 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
+this wall seperates my 2 css codes heheheahehaheahehae
+▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ ▬ 
+
+
+
+
+
+
+
+
+
+
+
+
+.gfx-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 25px;
+  background: #ffb6d9;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 1px solid #ff9acb;
+  box-shadow: 0 0 15px rgba(255, 182, 217, 0.5);
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  animation: pulse 2s infinite;
+}
+
+.gfx-button:hover {
+  background: #ff8ac7;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffb6d9;
+  border-color: white;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
