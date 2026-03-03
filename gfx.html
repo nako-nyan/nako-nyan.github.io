@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nako's gfx ☆</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="gfx-styles.css" />
+  <link rel="icon" type="image/png" href="/images/facivon.png">
+</head>
+<body>
+  <!-- main gfx card with pixel font!! -->
+  <div class="gfx-card">
+    <!-- top section with back link -->
+    <a href="index.html" class="back-link"><< back to nako's world ♡</a>
+    
+    <h1>CLICK TO SEE GFX!!!!</h1>
+    
+    <!-- gfx grid where u add ur images -->
+    <div class="gfx-grid">
+      <!-- REPLACE THESE WITH YOUR ACTUAL GFX IMAGES -->
+      <!-- just put ur images in /images/ folder and change the src -->
+      <div class="gfx-item">
+        <img src="/images/gfx1.png" alt="gfx 1" onclick="openFullscreen(this)">
+      </div>
+      <div class="gfx-item">
+        <img src="/images/gfx2.png" alt="gfx 2" onclick="openFullscreen(this)">
+      </div>
+      <div class="gfx-item">
+        <img src="/images/gfx3.png" alt="gfx 3" onclick="openFullscreen(this)">
+      </div>
+      <div class="gfx-item">
+        <img src="/images/gfx4.png" alt="gfx 4" onclick="openFullscreen(this)">
+      </div>
+      <div class="gfx-item">
+        <img src="/images/gfx5.png" alt="gfx 5" onclick="openFullscreen(this)">
+      </div>
+      <div class="gfx-item">
+        <img src="/images/gfx6.png" alt="gfx 6" onclick="openFullscreen(this)">
+      </div>
+      <!-- add more by copying the div above!! -->
+    </div>
+    
+    <!-- the funny end message u wanted -->
+    <p class="end-message">HEY YOU'VE SCROLLED TO THE END OF MY GFX ALREADY ASSHOLE, YOU THINK IM SOME SORTA GFX CHURNING SWEATSHOP WORKER? ILL SLAP YOU!!! (╯°□°）╯︵ ┻━┻</p>
+    
+    <!-- fullscreen modal for zooming -->
+    <div id="fullscreen-modal" class="modal" onclick="closeFullscreen()">
+      <span class="close-btn">&times;</span>
+      <img id="fullscreen-img" class="modal-content">
+    </div>
+  </div>
+  
+  <!-- music player that autoplays (browsers might block autoplay tho) -->
+  <audio id="gfx-music" loop autoplay>
+    <!-- PUT YOUR SONG LINK HERE!! replace with actual song file -->
+    <source src="/music/your-song.mp3" type="audio/mpeg">
+    ur browser doesnt support audio bb <3
+  </audio>
+  
+  <script>
+    // fullscreen image function
+    function openFullscreen(img) {
+      const modal = document.getElementById('fullscreen-modal');
+      const modalImg = document.getElementById('fullscreen-img');
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    }
+    
+    function closeFullscreen() {
+      document.getElementById('fullscreen-modal').style.display = 'none';
+    }
+    
+    // click outside modal to close
+    window.onclick = function(event) {
+      const modal = document.getElementById('fullscreen-modal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+    
+    // try to play music (browsers are annoying with autoplay)
+    window.addEventListener('load', function() {
+      const music = document.getElementById('gfx-music');
+      music.volume = 0.5; // set to 50% volume so it's not too loud
+      
+      // try to play
+      music.play().catch(e => {
+        console.log('autoplay blocked, user needs to interact');
+        // if autoplay blocked, show a lil message? but whatever
+      });
+    });
+  </script>
+</body>
+</html>
